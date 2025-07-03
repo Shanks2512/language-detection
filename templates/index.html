@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Detector</h1>
+        <form method="POST" action="/predict">
+            <textarea name="text" rows="5" placeholder="Enter your text here..."></textarea>
+            <br>
+            <button type="submit">Detect Language</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            <h2>Detected Language:</h2>
+            <p><strong>{{ prediction }}</strong></p>
+            <p><em>Input:</em> "{{ user_text }}"</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
